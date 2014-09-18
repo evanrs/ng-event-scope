@@ -14,36 +14,61 @@ A usage sample that should really be a test
 
 ngModule.run(function($rootScope) {
     var $scope = $rootScope.$new();
- 
+
     $scope.$on("a:b:c", function(){
         console.log(arguments[1], "\t==\t", "$scope.$on(a:b:c)");
     });
- 
+
     $scope.$on("a:b*", function(){
         console.log(arguments[1], "\t==\t", "$scope.$on(a:b*)");
     });
- 
+
     $scope.$on("a*", function(){
         console.log(arguments[1], "\t==\t", "$scope.$on(a*)");
     });
- 
+
     $rootScope.$on("a:b:c", function() {
         console.log(arguments[1], "\t==\t", "$rootScope.$on(a:b:c)");
     });
- 
+
     $rootScope.$on("a:b*", function() {
         console.log(arguments[1], "\t==\t", "$rootScope.$on(a:b*)");
     });
- 
+
     $rootScope.$on("a*", function() {
         console.log(arguments[1], "\t==\t", "$rootScope.$on(a*)");
     });
- 
+
     $scope.$emit("a:b:c", "$scope.$emit(a:b:c)");
     $scope.$broadcast("a:b:c", "$scope.$broadcast(a:b:c)");
- 
+
     $rootScope.$emit("a:b:c", "$rootScope.$emit(a:b:c)");
     $rootScope.$broadcast("a:b:c", "$rootScope.$broadcast(a:b:c)");
 });
 
+```
+
+Which outputs—with slightly more text and different tabbing:
+```javascript
+$scope.$emit(a:b:c)             ==   $scope.$on(a:b:c)
+                                ==   $eventScope.$on(a:b:c)
+                                ==   $scope.$on(a:b*)
+                                ==   $eventScope.$on(a:b*)
+                                ==   $scope.$on(a*)
+                                ==   $eventScope.$on(a*)
+
+$scope.$broadcast(a:b:c)        ==   $scope.$on(a:b:c)
+                                ==   $scope.$on(a:b*)
+                                ==   $scope.$on(a*)
+
+$eventScope.$emit(a:b:c)        ==   $eventScope.$on(a:b:c)
+                                ==   $eventScope.$on(a:b*)
+                                ==   $eventScope.$on(a*)
+
+$eventScope.$broadcast(a:b:c)   ==   $eventScope.$on(a:b:c)
+                                ==   $scope.$on(a:b:c)
+                                ==   $eventScope.$on(a:b*)
+                                ==   $scope.$on(a:b*)
+                                ==   $eventScope.$on(a*)
+                                ==   $scope.$on(a*)
 ```
