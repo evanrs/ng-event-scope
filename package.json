@@ -1,0 +1,28 @@
+{
+  "name": "ng-event-scope",
+  "version": "0.0.0",
+  "description": "Backbone style events in Angular.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/evanrs/ng-event-scope.git"
+  },
+  "keywords": [
+    "angular",
+    "angular",
+    "events",
+    "backbone",
+    "backbone",
+    "events",
+    "pubsub"
+  ],
+  "author": "Evan Schneider",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/evanrs/ng-event-scope/issues"
+  },
+  "homepage": "https://github.com/evanrs/ng-event-scope"
+}
