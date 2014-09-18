@@ -1,5 +1,6 @@
-var $eventScopeProvider = require('./$eventScopeProvider');
+var $eventScopeProvider = require('./src/$eventScopeProvider');
 
 module.exports = function(ngModule) {
-    return ngModule.provider(['$rootScopeProvider', $eventScopeProvider]);
+    return ngModule.provider(
+        '$eventScope', ['$rootScopeProvider', $eventScopeProvider]);
 }
