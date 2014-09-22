@@ -1,6 +1,6 @@
 {
   "name": "ng-event-scope",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Backbone style events in Angular.",
   "main": "index.js",
   "scripts": {
@@ -12,11 +12,11 @@
   },
   "keywords": [
     "angular",
-    "angular",
-    "events",
+    "angular events",
     "backbone",
-    "backbone",
-    "events",
+    "backbone events",
+    "event emitter",
+    "event aggregator",
     "pubsub"
   ],
   "author": "Evan Schneider",
