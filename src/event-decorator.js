@@ -1,11 +1,14 @@
-module.exports = function(proto) {
+module.exports = function(proto, options) {
+    options= options || {};
+
     var $broadcast = proto.$broadcast;
     var $emit = proto.$emit;
 
     proto.$emit = function() {
+        options.debug && console.log('emit\n',  arguments);
+
         var event = $emit.apply(this, arguments);
         var nextEvent = getNextEvent(arguments);
-
         event.cascade = event.stopCascade || !nextEvent ?
             false : this.$emit.apply(this, nextEvent);
 
@@ -13,6 +16,8 @@ module.exports = function(proto) {
     }
 
     proto.$broadcast = function() {
+        options.debug && console.log('broadcast\n', arguments);
+
         var event = $broadcast.apply(this, arguments);
         var nextEvent = getNextEvent(arguments);
 
