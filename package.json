@@ -1,6 +1,6 @@
 {
   "name": "ng-event-scope",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Backbone style events in Angular.",
   "main": "index.js",
   "scripts": {
@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/evanrs/ng-event-scope/issues"
   },
-  "homepage": "https://github.com/evanrs/ng-event-scope"
+  "homepage": "https://github.com/evanrs/ng-event-scope",
+  "dependencies": {
+    "lodash": "^3.0.0"
+  }
 }

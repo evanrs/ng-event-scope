@@ -1,3 +1,5 @@
+var _ = require('lodash');
+
 module.exports = function(proto, options) {
     options= options || {};
 
