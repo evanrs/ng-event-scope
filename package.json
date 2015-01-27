@@ -24,5 +24,8 @@
   "bugs": {
     "url": "https://github.com/evanrs/ng-event-scope/issues"
   },
-  "homepage": "https://github.com/evanrs/ng-event-scope"
+  "homepage": "https://github.com/evanrs/ng-event-scope",
+  "dependencies": {
+    "lodash": "^3.0.0"
+  }
 }

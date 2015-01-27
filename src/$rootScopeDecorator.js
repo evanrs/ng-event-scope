@@ -1,3 +1,4 @@
+var _ = require('lodash');
 var decorate = require('./event-decorator');
 
 var options = {
